@@ -8,7 +8,7 @@ namespace SnakeAndLadderGAME
         {
             ladder game = new ladder();
             Console.WriteLine(game.DieRoll());
-            game.Game();
+            game.gamePlaying();
 
         }
     }
