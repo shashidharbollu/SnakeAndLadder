@@ -1,11 +1,14 @@
 ﻿using System;
-using SnakeAndLadderGAME;
-public class program
+
+namespace SnakeAndLadderGAME
 {
-    public static void Main(String[] args)
+    class Program
     {
-        ladder game = new ladder();
-        int start = game.dieRoll();
-        Console.WriteLine("Welcome in the Game, Your Position is: " + "****" + start + "****");
+        static void Main (string[] args)
+        {
+            ladder game = new ladder();
+            Console.WriteLine(game.DieRoll());
+            
+        }
     }
 }
