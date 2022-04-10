@@ -10,52 +10,51 @@ namespace SnakeAndLadderGAME
 
     {
         const int NO_PLAY = 0, SNAKE = 1, LADDER = 2;
-
-        internal bool DieRoll()
-        {
-            throw new NotImplementedException();
-        }
-
         int position = 0;
-        public int dieRoll()
+
+        public int DieRoll()
         {
             Random random = new Random();
-            int diePosition = random.Next(1, 7);
-            return diePosition;
+            int DiePosition = random.Next(1, 7);
+            return DiePosition;
         }
-        public void gamePlaying()
+        public void Game()
         {
             while (this.position < 100)
             {
                 Random random = new Random();
-                int roll = random.Next(0, 3);
-
-                switch (roll)
+                int option = random.Next(0, 3);
+                switch (option)
                 {
                     case NO_PLAY:
                         this.position += 0;
                         break;
                     case SNAKE:
-                        this.position -= this.dieRoll();
+                        this.position -= this.DieRoll();
                         if (this.position < 0)
                         {
                             this.position = 0;
                         }
                         break;
+
                     case LADDER:
-                        int maxValue = this.dieRoll();
-                        this.position += maxValue;
+                        int roll = this.DieRoll();
+                        this.position += roll;
                         if (this.position > 100)
                         {
-                            this.position -= maxValue;
+                            this.position -= roll;
+
                         }
                         break;
                 }
+                Console.WriteLine(this.position);
 
             }
 
-        }
 
+        }
     }
 }
 
+
+       
